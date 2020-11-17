@@ -1,13 +1,19 @@
-import React from 'react';
-  function QuestionCount(props) {
-    return (
-      <div className="questionCount">
-        Question <span>{props.counter}</span> of <span>{props.total}</span>
-      </div>
-    );
-  }
-  QuestionCount.propTypes = {
-    counter: React.PropTypes.number.isRequired,
-    total: React.PropTypes.number.isRequired
+import {Component} from 'react';
+import PropTypes from 'prop-types';
+
+class  QuestionCount extends Component {
+  static propTypes = {
+    counter: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired
   };
+    
+    render(){
+	return (
+		<div className="questionCount">
+		Question <span>{this.props.counter}</span> of <span>{this.props.total}</span>
+		</div>
+	);
+    };
+}
+
 export default QuestionCount;
